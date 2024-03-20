@@ -1,8 +1,10 @@
-import { MonteCarlo } from "next/font/google";
+import { Vujahday_Script } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Nav"
+import Josh from "./components/styles.module.css"
+import Footer from "./components/Footer";
 
-const Monte = MonteCarlo({ 
+const Monte =   Vujahday_Script({ 
   subsets: ["latin"], 
   weight: ["400"]
 });
@@ -15,13 +17,16 @@ export const metadata = {
 
 export default function RootLayout({children}) {
   return (
-    <html lang="en">
+    <html lang="en" className={Josh.main}>
        
       <body className={`${Monte.className} text-2xl`}>
        <Navbar />
-        
-        {children}
+        <div className="min-h-[80vh]">
 
+        {children}
+        </div>
+
+        <Footer />
       </body>
     </html>
   );
